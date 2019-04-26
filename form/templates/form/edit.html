@@ -1,0 +1,20 @@
+<center>
+    <a href="http://www.numacorp.com/"><img src="http://www.mca-sask.com/images/Logos/NC_Logo.png" alt="image not found" width = "500"></a>
+    <h3>{{title}}</h3>
+</center>
+       
+<form method="post" >
+    {% csrf_token %}
+    <h4>Manager Name: {{form.manager_name}}</h4>
+                
+    <h4>Material Used: {{form.materials_used}}</h4>
+                
+    <h4>Quantity: {{form.quantity}}</h4>
+                
+    <h4>Time Submitted: {{form.time_submitted}} </h4>
+            
+    <button type="submit" class="btn btn-default"&gt;Submit>Submit</button>
+</form>
+
+<a href="/form/view_all" class="btn">Cancel</a>
+

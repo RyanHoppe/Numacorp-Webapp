@@ -1,0 +1,53 @@
+{% extends 'form/layout.html' %}
+
+{% block content %}
+<h4 class="center-align">{{title}}</h4>
+<div class="card">
+    <div class="card-content">
+        <div class="center-align">
+            <a href="/form/materials_form_submission/" class="btn">Submit a Materials Form</a>
+        </div>
+    </div>    
+    <div class="card-content">
+        <div class="center-align">
+            <a href="/form/clock_in_form_submission/" class="btn">Submit a Clock-in Form</a>   
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="center-align">
+            <a href="/form/clock_out_form_submission/" class="btn">Submit a Clock-out Form</a>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="center-align">
+            <a href="/form/used_materials/" class="btn">View All Used Material Amounts</a>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="center-align">
+            <a href="/form/schedule/" class="btn">View Employee Schedules</a>
+        </div>
+    </div>
+</div>
+
+
+<h5 class="center-align">Recent Material Submissions</h5>
+<ul class="collection">
+    {% for form in forms %}
+        <li class="collection-item">Manager: {{form.manager_name}}<br>Time: {{form.time_submitted}}
+            <br><br>
+            <a href="/form/details/{{form.id}}" class="btn btn-link" >More Details</a>
+            <br><br>
+            <a href="/form/edit/{{form.id}}" class="btn btn-link" >Edit</a>
+            <a href="/form/delete/{{model.id}}" class="btn btn-link red">Delete</a>
+        </li>
+    {% endfor %}
+    <div class="center-align">
+        <li class="collection-i">
+            <a href="/form/view_all/" class="btn">View All</a>
+        </li>
+    </div>
+</ul>
+
+
+{% endblock %}

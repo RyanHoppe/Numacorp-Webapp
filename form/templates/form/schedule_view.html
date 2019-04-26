@@ -1,0 +1,27 @@
+{% extends 'form/layout.html' %}
+
+{% block content %}
+<div class="center-align">
+    <h4>{{title}}</h4>
+</div>
+<ul class="collection">
+        <li class="collection-item">
+            <div class="center-align">
+                <a href="/" class="btn">Go back</a>
+            </div>
+        </li>
+    {% for entry in list %}
+        <li class="collection-item">
+            <span style="white-space: pre-line">
+                {{entry}}
+            </span>
+        </li>
+    {% endfor %}
+    <li class="collection-item">
+        <div class="center-align">
+            <a href="/" class="btn">Go back</a>
+        </div>
+    </li>
+</ul>
+
+{% endblock %}

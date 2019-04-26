@@ -1,0 +1,32 @@
+{% extends 'form/layout.html' %}
+
+{% block content %}
+<div class="center-align">
+    <h4>{{title}}</h4>
+</div>
+<ul class="collection">
+        <li class="collection-item">
+            <div class="center-align">
+                <a href="/" class="btn">Go back</a>
+            </div>
+        </li>
+    {% for model in models %}
+        <li class="collection-item">
+            Manager: {{model.manager_name}}
+            <br>
+            Time: {{model.time_submitted}}
+            <br><br>
+            <a href="/form/details/{{model.id}}" class="btn btn-link" >More Details</a>
+            <br><br>
+            <a href="/form/edit/{{model.id}}" class="btn btn-link">Edit</a>
+            <a href="/form/delete/{{model.id}}" class="btn btn-link red">Delete</a>
+        </li>
+    {% endfor %}
+    <li class="collection-item">
+        <div class="center-align">
+            <a href="/" class="btn">Go back</a>
+        </div>
+    </li>
+</ul>
+
+{% endblock %}

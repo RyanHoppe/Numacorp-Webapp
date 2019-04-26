@@ -1,0 +1,17 @@
+{% extends 'form/layout.html' %}
+
+{% block content %}
+<h4 class="center-align color: blue lighten-3">{{title}}</h4>
+<div class="center-align">
+    <ul class="collection">
+        {% for material in materials %}
+            <li class="collection-item">{{material.m}}: {{material.q}}</li>
+        {% endfor %}
+        <div class="center-align">
+            <li class="collection-item"><a href="/form/select_date/" class="btn">Filter By Date</a></li>
+            <li class="collection-item"><a href="/" class="btn">Go back</a></li>
+        </div>
+    </ul>
+</div>
+
+{% endblock %}
